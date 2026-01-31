@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         _timeManager = new TimeManager(_timeLimit);
 
         _timeManager.OnTimeEnd += OnTimeUp;
+
+        StartGame();
     }
 
     private void Update()
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         _state = GameState.Playing;
+        _timeManager.Start();
     }
 
     private void OnTimeUp()
