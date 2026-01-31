@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class UnitMover
 {
-    public UnitMover(NavMeshAgent agent)
+    public UnitMover(NavMeshAgent agent, UnitStats stats)
     {
         _agent = agent;
     }

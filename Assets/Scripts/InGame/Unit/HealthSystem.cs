@@ -6,9 +6,9 @@ public class HealthSystem
     public event Action OnDead;
     public event Action<float, float> OnHealthChange;
 
-    public HealthSystem(float health)
+    public HealthSystem(UnitStats stats)
     {
-        _maxHealth = health;
+        _maxHealth = stats.MaxHP;
         _currentHealth = _maxHealth;
     }
 
