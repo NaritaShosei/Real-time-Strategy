@@ -10,8 +10,13 @@ public class UnitMover
 
     public void MoveTo(Vector3 pos)
     {
-        _agent.SetDestination(pos);
+        if (Vector3.Distance(_lastTargetPos, pos) > 1.0f)
+        {
+            _lastTargetPos = pos;
+            _agent.SetDestination(_lastTargetPos);
+        }
     }
 
     private NavMeshAgent _agent;
+    private Vector3 _lastTargetPos;
 }
